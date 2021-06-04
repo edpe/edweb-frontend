@@ -3,6 +3,8 @@ import Head from 'next/head'
 import { createContext } from 'react'
 import { getStrapiMedia } from '../lib/media'
 import { fetchAPI } from '../lib/api'
+import { ThemeProvider } from 'styled-components'
+import { EdWebTheme, GlobalStyle } from '../Theme'
 
 import type { AppProps, AppContext } from 'next/app'
 
@@ -15,9 +17,13 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
     <>
       <Head>
         <link rel="shortcut icon" href={getStrapiMedia(global.favicon)} />
+        <title>Ed Perkins</title>
       </Head>
       <GlobalContext.Provider value={global}>
-        <Component {...pageProps} />
+        <ThemeProvider theme={EdWebTheme}>
+          <GlobalStyle />
+          <Component {...pageProps} />
+        </ThemeProvider>
       </GlobalContext.Provider>
     </>
   )
