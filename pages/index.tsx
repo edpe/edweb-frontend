@@ -1,21 +1,15 @@
 import { NextPage } from 'next'
-import styled from 'styled-components'
 
 import Layout from '../Components/Layout'
+import Header from '../Components/Header'
 
-const Title = styled.h1`
-  font-size: 50px;
-`
-
-const SubHeading = styled.h2`
-  font-family: 'RobotoSlab';
-`
-
-export const Home: NextPage = () => {
+const Home: NextPage = () => {
   return (
     <Layout>
-      <Title>Ed Perkins</Title>
-      <SubHeading>artist / composer / dev</SubHeading>
+      <Header
+        title="Ed Perkins"
+        subTitle="developer / composer / digital artist"
+      />
     </Layout>
   )
 }

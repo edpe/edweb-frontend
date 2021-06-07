@@ -2,10 +2,13 @@ import { createGlobalStyle } from 'styled-components'
 import type { DefaultTheme } from 'styled-components'
 
 export const EdWebTheme: DefaultTheme = {
-  colours: {
+  colors: {
     // Main colours
-    white: '#ffffff',
-    black: '#000000',
+    iceWhite: '#E1E1DF',
+    grey: '#D8DCDB',
+    greyBlue: '#B5C1CA',
+    indigo: '#3B4F61',
+    darkGrey: '#32393E'
 
   },
 
@@ -111,8 +114,8 @@ export const GlobalStyle = createGlobalStyle`
   /* Global defaults */
   //
   body {
-    background-color: ${(props) => props.theme.colours.white};
-    color: ${(props) => props.theme.colours.black};
+    background-color: ${(props) => props.theme.colors.iceWhite};
+    color: ${(props) => props.theme.colors.darkGrey};
     font-family: Aqua;
     font-size: 100%;
   }

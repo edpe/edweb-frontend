@@ -2,9 +2,12 @@ import 'styled-components'
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    colours: {
-        black: string
-        white: string
+    colors: {
+      iceWhite: string
+      grey: string
+      greyBlue: string
+      indigo: string
+      darkGrey: string
     }
 
     fontSizes: {
