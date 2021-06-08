@@ -1,20 +1,15 @@
 import { GetStaticProps, NextPage } from 'next'
+import { fetchAPI } from '../lib/api'
+
 import Layout from '../Components/Layout'
 import Header from '../Components/Header'
-import { Project } from '../types/project'
-import { fetchAPI } from '../lib/api'
-import styled from 'styled-components'
 import VerticalSpacing from '../Components/VerticalSpacing'
-import Image from '../Components/Image'
+import ProjectSummary from '../Components/ProjectSummary'
+import { Project } from '../types/project'
 
 interface HomePageProps {
   projects: Project[]
 }
-
-const ProjectHeading = styled.h2`
-  padding: 20px 0;
-  font-size: ${(props) => props.theme.fontSizes.title};
-`
 
 const Home: NextPage<HomePageProps> = ({ projects }) => {
   return (
@@ -24,8 +19,7 @@ const Home: NextPage<HomePageProps> = ({ projects }) => {
       <ul>
         {projects.map((project) => (
           <li key={project.id}>
-            <ProjectHeading>{project.title}</ProjectHeading>
-            <Image image={project.coverImage} />
+            <ProjectSummary project={project} />
           </li>
         ))}
       </ul>

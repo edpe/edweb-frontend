@@ -5,7 +5,7 @@ interface LayoutProps {
 }
 
 const PageLayout = styled.div`
-  margin: 0 100px;
+  margin: 0 400px;
 `
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
