@@ -28,7 +28,7 @@ interface MediaContent {
     media: Media
 }
 
-interface Media {
+export interface Media {
     id: number,
     name: string,
     alternativeText?: string,
