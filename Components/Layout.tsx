@@ -8,7 +8,7 @@ const PageLayout = styled.div`
   margin: 0 100px;
 `
 
-export const Layout = ({ children }: LayoutProps): JSX.Element => {
+const Layout = ({ children }: LayoutProps): JSX.Element => {
   return <PageLayout>{children}</PageLayout>
 }
 
