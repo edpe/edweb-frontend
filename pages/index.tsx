@@ -1,11 +1,12 @@
 import { GetStaticProps, NextPage } from 'next'
-import { fetchAPI } from '../lib/api'
 
 import Layout from '../Components/Layout'
 import Header from '../Components/Header'
 import VerticalSpacing from '../Components/VerticalSpacing'
 import ProjectSummary from '../Components/ProjectSummary'
 import { Project } from '../types/project'
+
+import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
 
 interface HomePageProps {
   projects: Project[]
@@ -28,15 +29,33 @@ const Home: NextPage<HomePageProps> = ({ projects }) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  // Run API calls in parallel
-  const [projects] = await Promise.all([
-    fetchAPI('/projects'),
-    fetchAPI('/categories'),
-  ])
+  const client = new ApolloClient({
+    uri: 'http://localhost:1337/graphql',
+    cache: new InMemoryCache(),
+  })
+
+  const { data } = await client.query({
+    query: gql`
+      query getProjects {
+        projects {
+          id
+          title
+          description
+          coverImage {
+            id
+            name
+            alternativeText
+            url
+          }
+        }
+      }
+    `,
+  })
 
   return {
-    props: { projects },
-    revalidate: 1,
+    props: {
+      projects: data.projects,
+    },
   }
 }
 
