@@ -30,7 +30,7 @@ const Home: NextPage<HomePageProps> = ({ projects }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const client = new ApolloClient({
-    uri: 'http://localhost:1337/graphql',
+    uri: 'https://edweb-backend.herokuapp.com/graphql',
     cache: new InMemoryCache(),
   })
 

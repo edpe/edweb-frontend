@@ -13,7 +13,7 @@ const StyledImage = styled.img`
 const Image = ({ image }: ImageProps): JSX.Element => {
   return (
     <StyledImage
-      src={'http://localhost:1337' + image.url}
+      src={'https://edweb-backend.herokuapp.com/' + image.url}
       alt={image.alternativeText || image.name}
     />
   )
