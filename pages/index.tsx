@@ -30,7 +30,7 @@ const Home: NextPage<HomePageProps> = ({ projects }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const client = new ApolloClient({
-    uri: process.env.BASE_URL,
+    uri: process.env.BASE_URL + '/graphql',
     cache: new InMemoryCache(),
   })
 
