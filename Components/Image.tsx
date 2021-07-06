@@ -12,10 +12,7 @@ const StyledImage = styled.img`
 
 const Image = ({ image }: ImageProps): JSX.Element => {
   return (
-    <StyledImage
-      src={process.env.BASE_URL + '/graphql' + image.url}
-      alt={image.alternativeText || image.name}
-    />
+    <StyledImage src={image.url} alt={image.alternativeText || image.name} />
   )
 }
 
