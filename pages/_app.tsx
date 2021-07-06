@@ -34,7 +34,7 @@ MyApp.getInitialProps = async (ctx: AppContext) => {
   // Calls page's `getInitialProps` and fills `appProps.pageProps`
   const appProps = await App.getInitialProps(ctx)
   const client = new ApolloClient({
-    uri: 'https://edweb-backend.herokuapp.com/graphql',
+    uri: process.env.BASE_URL,
     cache: new InMemoryCache(),
   })
 
