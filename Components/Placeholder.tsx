@@ -25,11 +25,27 @@ const EmailAddress = styled.h3`
   text-align: center;
 `
 
+const Text = styled.p`
+  font-family: 'RobotoSlab';
+  margin: 20px;
+  text-align: center;
+`
+
 export const Placeholder = (): JSX.Element => {
   return (
     <Contact>
       <Name> Ed Perkins</Name>
       <EmailAddress>ed@edperkins.co.uk</EmailAddress>
+      <Text>
+        I&apos;m sorry that there&apos;s nothing here yet, but hopefully soon
+        there will be
+      </Text>
+      <Text>Meanwhile why not check out</Text>
+      <Text>
+        <a href="https://inside-looking-out.vercel.app/">
+          this data art thing I made
+        </a>
+      </Text>
     </Contact>
   )
 }
